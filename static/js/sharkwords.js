@@ -18,13 +18,22 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
+
+  for (const letter of word){
+    $("#word-container").append(`<div class="letter-box ${letter}"</div>`);
+  }
 };
 
 // Loop over each letter in the alphabet and generate a button
 // for each letter
 const generateLetterButtons = () => {
-  // Replace this with your code
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  for (const char of alphabet){
+    $("#letter-buttons").append(`<button> ${char} </button>`);
+  }
+
 };
 
 // Set the `disabled` property of `buttonEl` to `true.
@@ -55,10 +64,10 @@ const isLetterInWord = (letter) => {
   const word = 'hello';
 
   // call the function that makes an empty line for each letter in the word
-  // Replace this line with the function call
+  createDivsForChars(word);
 
   // call the function that makes a button for each letter in the alphabet
-  // Replace this line with the function call
+  generateLetterButtons();
 
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
