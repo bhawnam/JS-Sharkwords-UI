@@ -41,7 +41,10 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+
+  const button = $(buttonEl);
+  button.attr("disabled", true);
+
 };
 
 // This is a helper function we will use in the future
@@ -49,7 +52,9 @@ const disableLetterButton = (buttonEl) => {
 // For now, you should test it out to make sure it works
 
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+
+  return $(`div.${letter}`).length > 0;
+
 };
 
 
@@ -61,10 +66,10 @@ const isLetterInWord = (letter) => {
   // You can change this to choose a random word from WORDS once you
   // finish this lab but we hard code it so we know what the word is
   // and can tell if things look correct for this word
-  const word = 'hello';
-
+  const chosenWord = 'hello';
+  //const chosenWord = WORDS[Math.floor(Math.random() * WORDS.length)];
   // call the function that makes an empty line for each letter in the word
-  createDivsForChars(word);
+  createDivsForChars(chosenWord);
 
   // call the function that makes a button for each letter in the alphabet
   generateLetterButtons();
